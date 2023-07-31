@@ -307,9 +307,9 @@ def train(epo_num=50, show_vgg_params=False):
 
         acc, acc_cls, mean_iu = label_accuracy_score(bag_msk_np, output_np, 2)
         test_Acc.append(acc)
-        test_mIou.append(mIou)
+        test_mIou.append(mean_iu)
 
-        print('Acc = %f, mIou = %f'%(acc, me))
+        print('Acc = %f, mIou = %f'%(acc, mean_iu))
         # 每5个epoch存储一次模型
         if np.mod(epo, 5) == 0:
             # 只存储模型参数
